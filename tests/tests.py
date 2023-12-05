@@ -48,7 +48,6 @@ def test_create_user_successfully_201():
     assert result.json()["job"] == job
 
 
-
 def test_post_login_successfully():
     url = "https://reqres.in/api/login"
     result: Response = requests.post(url, json={"email": "eve.holt@reqres.in", "password": "cityslicka"})

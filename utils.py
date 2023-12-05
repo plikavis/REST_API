@@ -1,5 +1,4 @@
 import json
-import schemes
 
 
 def load_schema(filepath):
