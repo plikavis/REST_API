@@ -34,7 +34,7 @@ def test_get_all_users_successfully():
     result: Response = requests.get(url)
     assert result.status_code == 200
     assert result.json()["total"] == 12
-    schema = load_schema("../schemes/get_all_users_successfully.json")
+    schema = load_schema("get_all_users_successfully.json")
     jsonschema.validate(result.json(), schema)
 
 
@@ -52,7 +52,7 @@ def test_post_login_successfully():
     url = "https://reqres.in/api/login"
     result: Response = requests.post(url, json={"email": "eve.holt@reqres.in", "password": "cityslicka"})
     assert result.status_code == 200
-    schema = load_schema("../schemes/post_login_successfully.json")
+    schema = load_schema("post_login_successfully.json")
     jsonschema.validate(result.json(), schema)
 
 
@@ -70,7 +70,7 @@ def test_put_update_user_successfully():
         "job": "zion resident"
     })
     assert result.status_code == 200
-    schema = load_schema("../schemes/put_update_user_successfully.json")
+    schema = load_schema("put_update_user_successfully.json")
     jsonschema.validate(result.json(), schema)
 
 
@@ -78,7 +78,7 @@ def test_patch_user_name_successfully():
     url = "https://reqres.in/api/books/6"
     result: Response = requests.patch(url, json={"name": "Yura"})
     assert result.status_code == 200
-    schema = load_schema("../schemes/patch_user_name_successfully.json")
+    schema = load_schema("patch_user_name_successfully.json")
     jsonschema.validate(result.json(), schema)
 
 
